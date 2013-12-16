@@ -1,0 +1,152 @@
+//
+// Panels
+// --------------------------------------------------
+
+
+// For inside a container with borders already e.g. sidebar
+.panel-inner {
+  border-radius: 0;
+  border: 0 none;
+    .panel-heading {
+      .border-top-radius(0);
+    }
+}
+
+// Panel contents
+.panel-body,
+.panel-body-inv {
+  padding: (@padding-gutter / @line-height-base) @padding-gutter;
+  .clearfix();
+}
+.panel-body-inv {
+  background-color: @panel-inv-bg;
+}
+
+// Optional heading
+.panel-heading {
+  padding: (@padding-gutter / @line-height-base) @padding-gutter;
+  border-bottom: 1px solid @panel-default-border;
+  .border-top-radius(@panel-border-radius - 1);
+}
+
+// Within heading, strip any `h*` tag of it's default margins for spacing.
+.panel-title {
+  //margin-top: 0;
+  //margin-bottom: 0;
+  font-size: ceil((@font-size-base + 4));
+  font-weight: @font-weight-md;
+  line-height: round(@headings-line-height + 0.1, 1);
+  //> a {
+    //color: inherit;
+  //}
+}
+
+// Optional footer (stays gray in every modifier class)
+.panel-footer,
+.panel-footer-inv {
+  padding: 7px @padding-gutter 6px;
+  background-color: @panel-footer-bg;
+  border-top: 1px solid @panel-inner-border;
+  .border-bottom-radius(@panel-border-radius - 1);
+}
+.panel-footer-inv {
+  background-color: transparent;
+}
+
+.justify-controls,
+.justify-controls-flush {
+  text-align: justify;
+  text-justify: distribute-all-lines; // IE only support
+  font-size: 0;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+
+  .btn-link {
+    padding: 0;
+  }
+
+  .text-overflow {
+    width: 50%;
+  }
+}
+
+.panel-controls-center {
+  padding: 7px 15px 6px;
+  text-align: center;
+}
+
+.text-overflow {
+  .text-overflow();
+}
+
+.justify-controls-flush {
+  padding: 0 0 0 15px;
+  .justify-left,
+  .justify-right {
+    //width: 50%;
+    .btn {
+      border-radius: 0;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      padding: 10px 12px 10px;
+      //border-width: 0 1px;
+      float: right;
+      + .btn {
+        margin-right: -1px;
+      }
+      &:first-child {
+        //border-right: 0;
+        border-radius: 0 0 3px 0;
+        margin-right: -1px;
+      }
+    }
+  }
+}
+
+.justify-left,
+.justify-right {
+  font-size: @font-size-base;
+  .btn-link {
+    vertical-align: baseline;
+  }
+}
+
+.justify-left,
+.justify-right,
+.justify-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*.panel-btns.text-right {
+  width: 100%;
+}*/
+
+/*.panel-text,
+.panel-btns {
+  width: 60%;
+  +.panel-btns,
+  +.panel-text {
+    width: 4  0%;
+  }
+}*/
+
+.panel-inv {
+  border-color: @panel-inv-border;
+  .panel-footer {
+    background-color: transparent;
+  }
+}
+
+.panel-shadow {
+  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+}
+
+.panel-shadow-modal {
+ .box-shadow(0 2px 4px rgba(0,0,0,.25)); 
+}
+
+
