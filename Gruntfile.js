@@ -98,7 +98,7 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js',
-        '!<%= yeoman.app %>/scripts/vendor/*',
+        //'!<%= yeoman.app %>/scripts/vendor/*',
         'test/spec/{,*/}*.js'
       ]
     },
@@ -142,9 +142,14 @@ module.exports = function (grunt) {
     // not enabled since usemin task does concat and uglify
     // check index.html to edit your build targets
     // enable this task if you prefer defining your build targets here
-    /*uglify: {
-      dist: {}
-    },*/
+    // uglify: {
+    //   //dist: {
+    //     build: {
+    //       src: ['<%= yeoman.dist %>/scripts/*.yp.js'],
+    //       dest: '<%= yeoman.dist %>/scripts/yn.js'
+    //     }
+    //   //}
+    // },
     rev: {
       dist: {
         files: {
