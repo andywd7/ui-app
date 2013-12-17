@@ -144,8 +144,12 @@ module.exports = function (grunt) {
     // enable this task if you prefer defining your build targets here
     uglify: {
       dist: {
-          src: ['<%= yeoman.app %>/scripts/*.yn.js'],
-          dest: '<%= yeoman.dist %>/scripts/yn.js'
+          files: [{
+            expand: true,
+            cwd: '<%= yeoman.app %>/scripts/',
+            src: '{,*/}*.yn.js',
+            dest: '<%= yeoman.dist %>/scripts/'
+          }]
         }
     },
     rev: {
@@ -153,6 +157,7 @@ module.exports = function (grunt) {
         files: {
           src: [
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
+            '!<%= yeoman.dist %>/scripts/*.yn.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
             '<%= yeoman.dist %>/fonts/{,*/}*.*'
