@@ -170,6 +170,13 @@
     </script>
 
     <script src="scripts/5d38b450.main.js"></script>
+		<script>
+			Modernizr.load({
+				test : Modernizr.mq('screen and (max-width: 767px)'),
+				yep : 'scripts/gnmenu.js',
+				callback : function (url, result, key) { $(function() { $("#gn-menu").jqMenu(); }); }
+			});
+		</script>
 
 	</body>
 </head></html>
