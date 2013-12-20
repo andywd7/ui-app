@@ -2848,19 +2848,6 @@ address {
   -webkit-transition: margin-left 0.2s ease-in-out;
   transition: margin-left 0.2s ease-in-out;
 }
-.touch .gn-menu-main a.fa-ellipsis-v {
-  display: block;
-}
-.touch .gn-trigger {
-  border-bottom: 1px solid #e6e6e6;
-  float: left;
-}
-.touch .gn-trigger + nav {
-  float: left;
-  margin-right: -50px;
-  padding-right: 50px;
-  width: 100%;
-}
 .no-touch {
   /*.gn-trigger {
     width: 0;
@@ -2938,12 +2925,26 @@ address {
     margin-left: 315px;
   }
 }
-@media screen and (max-width: 422px) {
-  .gn-menu-wrapper.gn-open-all {
-    width: 100%;
+@media screen and (max-width: 768px) {
+  /*.gn-menu-wrapper.gn-open-all {
+      width: 100%;
   }
+
   .gn-menu-wrapper.gn-open-all .gn-scroller {
-    width: 130%;
+      width: 130%
+  }*/
+  .touch .gn-menu-main a.fa-ellipsis-v {
+    display: block;
+  }
+  .touch .gn-trigger {
+    border-bottom: 1px solid #e6e6e6;
+    float: left;
+  }
+  .touch .gn-trigger + nav {
+    float: left;
+    margin-right: -50px;
+    padding-right: 50px;
+    width: 100%;
   }
 }
 /*.wrap {
