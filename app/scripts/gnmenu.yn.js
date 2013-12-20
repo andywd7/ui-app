@@ -71,7 +71,7 @@
                     document.addEventListener(self.eventtype, self.bodyClickFn); 
                 } );
             }
-            this.trigger.addEventListener(this.eventtype, function(ev) {
+            this.start.addEventListener(this.eventtype, function(ev) {
                 ev.stopPropagation();
                 ev.preventDefault();
                 if (self.isMenuOpen) {
@@ -86,13 +86,13 @@
         },
         _openMenu : function() {
             if (this.isMenuOpen) return;
-            $(this.trigger).addClass('gn-selected');
+            $(this.start).addClass('gn-selected');
             this.isMenuOpen = true;
             $(this.menu).addClass('gn-open-all');
         },
         _closeMenu : function() {
             if (!this.isMenuOpen) return;
-            $(this.trigger).removeClass('gn-selected');
+            $(this.start).removeClass('gn-selected');
             this.isMenuOpen = false;
             $(this.menu).removeClass('gn-open-all');
         }
