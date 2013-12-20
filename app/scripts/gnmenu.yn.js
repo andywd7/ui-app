@@ -47,6 +47,7 @@
             // and this.settings
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.settings).
+            this.start = this.el.querySelector('#gn-menu > .gn-item');
             this.trigger = this.el.querySelector('a.fa-ellipsis-v');
             this.menu = this.el.querySelector('.gn-menu-wrapper');
             this.menuOver = this.el.querySelector('ul.gn-menu');
@@ -63,6 +64,7 @@
         _initEvents : function() {
             var self = this;
 
+            $(this.start).addClass('gn-trigger');
             if (!mobilecheck()) {
                 this.menuOver.addEventListener('mouseover', function(ev) {
                     self._openMenu(); 
