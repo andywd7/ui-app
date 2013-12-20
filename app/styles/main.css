@@ -1824,7 +1824,7 @@ dt {
 dd {
   margin-left: 0;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .dl-horizontal dt {
     float: left;
     width: 160px;
@@ -2141,7 +2141,7 @@ address {
 .navbar:after {
   clear: both;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar {
     border-radius: 3px;
   }
@@ -2154,7 +2154,7 @@ address {
 .navbar-header:after {
   clear: both;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-header {
     float: left;
   }
@@ -2179,7 +2179,7 @@ address {
 .navbar-collapse.in {
   overflow-y: auto;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -2209,7 +2209,7 @@ address {
   margin-right: -15px;
   margin-left: -15px;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .container > .navbar-header,
   .container > .navbar-collapse {
     margin-right: 0;
@@ -2220,7 +2220,7 @@ address {
   z-index: 1000;
   border-width: 0 0 1px;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-static-top {
     border-radius: 0;
   }
@@ -2232,7 +2232,7 @@ address {
   left: 0;
   z-index: 1030;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-fixed-top,
   .navbar-fixed-bottom {
     border-radius: 0;
@@ -2254,7 +2254,7 @@ address {
 .navbar-brand:focus {
   text-decoration: none;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar > .container .navbar-brand {
     margin-left: -15px;
   }
@@ -2279,7 +2279,7 @@ address {
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-toggle {
     display: none;
   }
@@ -2314,7 +2314,7 @@ address {
     background-image: none;
   }
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-nav {
     float: left;
     margin: 0;
@@ -2327,7 +2327,7 @@ address {
     padding-bottom: 14.5px;
   }
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-left {
     float: left;
   }
@@ -2351,7 +2351,7 @@ address {
     margin-bottom: 5px;
   }
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-form {
     width: auto;
     border: 0;
@@ -2386,7 +2386,7 @@ address {
   margin-top: 14.5px;
   margin-bottom: 14.5px;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-text {
     margin-left: 15px;
     margin-right: 15px;
@@ -2594,7 +2594,7 @@ address {
   border-bottom: 1px solid #e6e6e6;
   position: relative;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-header {
     border-bottom: 0;
   }
@@ -2669,7 +2669,7 @@ address {
   color: #333333;
   background-color: #dddddd;
 }
-@media (min-width: 768px + 1) {
+@media (min-width: 769px) {
   .navbar-default .navbar-nav > li > a {
     padding-top: 14px;
     padding-bottom: 14px;
@@ -2690,10 +2690,8 @@ address {
 /* icon-only trigger (menu item) */
 .gn-trigger {
   border-right: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
   position: relative;
   width: 50px;
-  float: left;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -2850,6 +2848,19 @@ address {
   -webkit-transition: margin-left 0.2s ease-in-out;
   transition: margin-left 0.2s ease-in-out;
 }
+.touch .gn-menu-main a.fa-ellipsis-v {
+  display: block;
+}
+.touch .gn-trigger {
+  border-bottom: 1px solid #e6e6e6;
+  float: left;
+}
+.touch .gn-trigger + nav {
+  float: left;
+  margin-right: -50px;
+  padding-right: 50px;
+  width: 100%;
+}
 .no-touch {
   /*.gn-trigger {
     width: 0;
@@ -2869,6 +2880,9 @@ address {
   background: #5f6f81;
   color: white;
 }
+.no-touch .gn-menu-main a.fa-ellipsis-v {
+  display: none;
+}
 .no-touch .side-menu-icons .gn-trigger {
   width: 0;
   border-right: 0;
@@ -2886,7 +2900,7 @@ address {
 .no-touch .side-menu-icons .gn-menu-wrapper.gn-open-all {
   width: 300px;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .gn-menu-wrapper {
     width: 300px;
   }
