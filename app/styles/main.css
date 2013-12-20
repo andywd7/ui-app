@@ -2701,9 +2701,6 @@ address {
   -ms-user-select: none;
   user-select: none;
 }
-.touch {
-  background: red !important;
-}
 /*.gn-menu-main nav {
   float: left;
   margin-right: -@navbar-height;
