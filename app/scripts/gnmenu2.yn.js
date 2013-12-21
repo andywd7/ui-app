@@ -65,6 +65,8 @@
         _initEvents : function() {
             var self = this;
 
+            $(this.start).addClass('gn-trigger');
+            
             if (!mobilecheck()) {
                 this.menuOver.addEventListener('mouseover', function(ev) {
                     self._openMenu(); 
@@ -72,7 +74,6 @@
                 } );
             }
             this.trigger.addEventListener(this.eventtype, function(ev) {
-                $(this.start).addClass('gn-trigger');
                 ev.stopPropagation();
                 ev.preventDefault();
                 if (self.isMenuOpen) {
