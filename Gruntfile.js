@@ -142,22 +142,22 @@ module.exports = function (grunt) {
     // not enabled since usemin task does concat and uglify
     // check index.html to edit your build targets
     // enable this task if you prefer defining your build targets here
-    // uglify: {
-    //   dist: {
-    //       files: [{
-    //         expand: true,
-    //         cwd: '<%= yeoman.app %>/scripts/',
-    //         src: '{,*/}*.yn.js',
-    //         dest: '<%= yeoman.dist %>/scripts/'
-    //       }]
-    //     }
-    // },
+    uglify: {
+      dist: {
+          files: [{
+            expand: true,
+            cwd: '<%= yeoman.app %>/scripts/',
+            src: '{,*/}*.yn.js',
+            dest: '<%= yeoman.dist %>/scripts/'
+          }]
+        }
+    },
     rev: {
       dist: {
         files: {
           src: [
             '<%= yeoman.dist %>/scripts/{,*/}*.js',
-            //'!<%= yeoman.dist %>/scripts/*.yn.js',
+            '!<%= yeoman.dist %>/scripts/*.yn.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
             '<%= yeoman.dist %>/fonts/{,*/}*.*'
