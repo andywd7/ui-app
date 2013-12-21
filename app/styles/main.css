@@ -2946,6 +2946,7 @@ address {
   .touch .gn-trigger {
     border-bottom: 1px solid #e6e6e6;
     float: left;
+    color: red !important;
   }
   .touch .gn-trigger + nav {
     float: left;
