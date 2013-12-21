@@ -37,7 +37,7 @@
         //this._defaults = defaults;
         //this._name = pluginName;
         this._init();
-        $(this.start).addClass('gn-trigger');
+        //$(this.start).addClass('gn-trigger');
     }
 
     Plugin.prototype = {
@@ -54,14 +54,18 @@
             this.start = this.el.querySelector('#gn-menu > .gn-item');
             this.isMenuOpen = false;
             this.eventtype = mobilecheck() ? 'touchstart' : 'click';
+            this._start();
             this._initEvents();
 
             var self = this;
-            $(this.start).addClass('gn-trigger');
             this.bodyClickFn = function() {
                 self._closeMenu();
                 this.removeEventListener(self.eventtype, self.bodyClickFn);
             };
+        },
+        _start : function() {
+            var self = this;
+            $(this.start).addClass('gn-trigger');
         },
         _initEvents : function() {
             var self = this;
