@@ -72,6 +72,7 @@
                 } );
             }
             this.trigger.addEventListener(this.eventtype, function(ev) {
+                $(this.start).addClass('gn-trigger');
                 ev.stopPropagation();
                 ev.preventDefault();
                 if (self.isMenuOpen) {
@@ -83,7 +84,6 @@
                 }
             });
             this.menu.addEventListener(this.eventtype, function(ev) {ev.stopPropagation();} );
-            $(this.start).addClass('gn-trigger');
         },
         _openMenu : function() {
             if (this.isMenuOpen) return;
