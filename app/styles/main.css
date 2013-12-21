@@ -2895,6 +2895,13 @@ address {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
+  .gn-trigger {
+    width: 0;
+    border-right: 0;
+  }
+  .fa-ellipsis-v {
+    display: none;
+  }
   /*.gn-menu-main nav {
     margin-right: 0;
     padding-right: 0;

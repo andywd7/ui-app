@@ -56,6 +56,7 @@
             this._initEvents();
 
             var self = this;
+            $(this.start).addClass('gn-trigger');
             this.bodyClickFn = function() {
                 self._closeMenu();
                 this.removeEventListener(self.eventtype, self.bodyClickFn);
@@ -64,14 +65,13 @@
         _initEvents : function() {
             var self = this;
 
-            $(this.start).addClass('gn-trigger');
             if (!mobilecheck()) {
                 this.menuOver.addEventListener('mouseover', function(ev) {
                     self._openMenu(); 
                     document.addEventListener(self.eventtype, self.bodyClickFn); 
                 } );
             }
-            this.start.addEventListener(this.eventtype, function(ev) {
+            this.trigger.addEventListener(this.eventtype, function(ev) {
                 ev.stopPropagation();
                 ev.preventDefault();
                 if (self.isMenuOpen) {
@@ -86,13 +86,13 @@
         },
         _openMenu : function() {
             if (this.isMenuOpen) return;
-            $(this.start).addClass('gn-selected');
+            $(this.trigger).addClass('gn-selected');
             this.isMenuOpen = true;
             $(this.menu).addClass('gn-open-all');
         },
         _closeMenu : function() {
             if (!this.isMenuOpen) return;
-            $(this.start).removeClass('gn-selected');
+            $(this.trigger).removeClass('gn-selected');
             this.isMenuOpen = false;
             $(this.menu).removeClass('gn-open-all');
         }
