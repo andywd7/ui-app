@@ -57,6 +57,8 @@
             this._initEvents();
 
             var self = this;
+            $(this.start).addClass('gn-trigger');
+            
             this.bodyClickFn = function() {
                 self._closeMenu();
                 this.removeEventListener(self.eventtype, self.bodyClickFn);
@@ -65,8 +67,8 @@
         _initEvents : function() {
             var self = this;
 
-            $(this.start).addClass('gn-trigger');
-            
+            //$(this.start).addClass('gn-trigger');
+
             if (!mobilecheck()) {
                 this.menuOver.addEventListener('mouseover', function(ev) {
                     self._openMenu(); 
