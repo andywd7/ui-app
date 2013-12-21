@@ -51,10 +51,9 @@
             this.trigger = this.el.querySelector('a.fa-ellipsis-v');
             this.menu = this.el.querySelector('.gn-menu-wrapper');
             this.menuOver = this.el.querySelector('ul.gn-menu');
-            this.start = this.el.querySelector('#gn-menu > .gn-item');
+            this.start = this.el.querySelector('#gn-menu > div.gn-item');
             this.isMenuOpen = false;
             this.eventtype = mobilecheck() ? 'touchstart' : 'click';
-            this._start();
             this._initEvents();
 
             var self = this;
@@ -62,10 +61,6 @@
                 self._closeMenu();
                 this.removeEventListener(self.eventtype, self.bodyClickFn);
             };
-        },
-        _start : function() {
-            var self = this;
-            $(this.start).addClass('gn-trigger');
         },
         _initEvents : function() {
             var self = this;
@@ -88,6 +83,7 @@
                 }
             });
             this.menu.addEventListener(this.eventtype, function(ev) {ev.stopPropagation();} );
+            $(this.start).addClass('gn-trigger');
         },
         _openMenu : function() {
             if (this.isMenuOpen) return;
