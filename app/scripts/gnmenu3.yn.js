@@ -57,6 +57,7 @@
 
             var self = this;
             $(this.start).addClass('gn-trigger');
+            $(this.el).addClass('off-canvas');
             
             this.bodyClickFn = function() {
                 self._closeMenu();
