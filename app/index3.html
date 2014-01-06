@@ -72,6 +72,8 @@
 						<li><a href="index.html">Layout 1</a></li>
 						<li><a href="index2.html">Layout 2</a></li>
 						<li class="active"><a href="index3.html">Layout 3</a></li>
+						<li><a href="index4.html">Layout 4</a></li>
+						<li><a href="index5.html">Layout 5</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Link</a></li>
@@ -100,9 +102,14 @@
 		<script src="bower_components/bootstrap/js/transition.js"></script>
 		<script src="bower_components/bootstrap/js/collapse.js"></script>
 		<!-- endbuild -->
-		<script src="scripts/gnmenu3.yn.js"></script>
+		<script src="scripts/gnmenu.yn.js"></script>
 		<script>
-			$(document).ready(function () { $(function() { $("#gn-menu").jqMenu(); }); });
+			$(document).ready(function () {
+				$("#gn-menu").jqMenu({
+					menuType: 'off-canvas',
+					//slideType: 'push'
+				});
+			});
 			//Modernizr.load({
 				//test : Modernizr.mq('screen and (max-width: 767px)'),
 				//yep : 'scripts/gnmenu.yn.js',

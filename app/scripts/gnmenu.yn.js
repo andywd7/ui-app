@@ -1,6 +1,6 @@
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
-;(function ($, window, undefined) {
+;(function ($, window, document, undefined) {
 
     // undefined is used here as the undefined global variable in ECMAScript 3 is
     // mutable (ie. it can be changed by someone else). undefined isn't really being
@@ -21,10 +21,11 @@
     }
 
     // Create the defaults once
-    var pluginName = "jqMenu" //,
-    //defaults = {
-    //    propertyName: "value"
-    //};
+    var pluginName = "jqMenu",
+    defaults = {
+        menuType: 'basic',
+        slideTpe: ''
+    };
 
     // The actual plugin constructor
     function Plugin (el, options) {
@@ -33,7 +34,10 @@
         // more objects, storing the result in the first object. The first object
         // is generally empty as we don't want to alter the default options for
         // future instances of the plugin
-        this.settings = $.extend({}, options);
+        this.settings = $.extend({
+            menuType: 'basic',
+            slideType: ''
+        }, defaults, options);
         //this._defaults = defaults;
         //this._name = pluginName;
         this._init();
@@ -50,13 +54,27 @@
             this.trigger = this.el.querySelector('a.fa-ellipsis-v');
             this.menu = this.el.querySelector('.gn-menu-wrapper');
             this.menuOver = this.el.querySelector('ul.gn-menu');
+            this.start = this.el.querySelector('#gn-menu > div.gn-item');
             this.isMenuOpen = false;
             this.eventtype = mobilecheck() ? 'touchstart' : 'click';
             this._initEvents();
 
             var self = this;
+
+            //if (this.settings.menuType === 'basic' || 'off-canvas-icon-only') {
+                $(this.start).addClass('gn-trigger');
+            //};
+            if (this.settings.menuType === 'off-canvas') {
+                $(this.el).addClass('off-canvas');
+            } else if (this.settings.menuType === 'off-canvas-full-width') {
+                $(this.el).addClass('off-canvas gn-full-width');
+            } else if (this.settings.menuType === 'off-canvas-icon-only') {
+                $(this.el).addClass('off-canvas gn-icon-only');
+            };
+
             this.bodyClickFn = function() {
                 self._closeMenu();
+                $('body').removeClass('gn-menu-push');
                 this.removeEventListener(self.eventtype, self.bodyClickFn);
             };
         },
@@ -81,6 +99,26 @@
                 }
             });
             this.menu.addEventListener(this.eventtype, function(ev) {ev.stopPropagation();} );
+
+            if (this.settings.slideType === 'push') {
+                if (!mobilecheck()) {
+                    this.menuOver.addEventListener('mouseover', function(ev) {
+                        $('body').addClass('gn-menu-push'); 
+                        document.addEventListener(self.eventtype, self.bodyClickFn); 
+                    } );
+                }   
+                this.trigger.addEventListener(this.eventtype, function(ev) {
+                    ev.stopPropagation();
+                    ev.preventDefault();
+                    if (self.isMenuOpen) {
+                        $('body').addClass('gn-menu-push');
+                        document.addEventListener(self.eventtype, self.bodyClickFn);
+                    } else {
+                        $('body').removeClass('gn-menu-push');
+                        document.removeEventListener(self.eventtype, self.bodyClickFn);
+                    }
+                });
+            };
         },
         _openMenu : function() {
             if (this.isMenuOpen) return;
@@ -106,4 +144,4 @@
         });
     };
 
-})(jQuery, window);
+})(jQuery, window, document);

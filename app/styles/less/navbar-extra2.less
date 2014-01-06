@@ -1,0 +1,124 @@
+.gn-icon-only,
+.gn-full-width {
+  .gn-menu-wrapper {
+    width: @navbar-height;
+    //border-right-width: 1px;
+  }
+}
+
+
+.off-canvas {
+  .gn-menu-wrapper {
+    border-width: 0;
+    width: 0;
+  }
+  .gn-menu-wrapper.gn-open-all {
+    border-right-width: 1px;
+    width: 300px + @navbar-height;
+    .box-shadow(1px 1px 2px rgba(0,0,0,.1));
+  }
+  .gn-scroller {
+    width: 300px + @navbar-height + 30px;
+  }
+  .gn-trigger {
+    border-bottom: 1px solid @navbar-default-border;
+    float: left;
+    width: @navbar-height;
+    border-right-width: 1px;
+
+    + nav {
+      float: left;
+      margin-right: -@navbar-height;
+      padding-right: @navbar-height;
+      width: 100%;
+    }
+  }
+  .navbar-collapse {
+    margin-left: -@navbar-height;
+  }
+  + .content {
+    margin-left: 15px;
+  }
+
+  .gn-menu-push & {
+    + .content {
+      margin-left: 300px + @navbar-height + 15px;
+    }
+    /*&.gn-icon-only + .content {
+      margin-left: 300px + 15px;
+    }*/
+  }
+}
+
+.gn-icon-only,
+.gn-full-width {
+  .gn-menu-wrapper {
+    border-right-width: 1px;
+  }
+}
+
+
+.no-touch {
+  .off-canvas a.fa-ellipsis-v {
+    display: block;
+  }
+}
+
+.touch {
+
+}
+
+
+@media (min-width: @grid-float-breakpoint) {
+  .off-canvas.gn-icon-only,
+  .off-canvas.gn-full-width {
+    .gn-scroller {
+      width: 300px + 30px;
+    }
+    .gn-trigger {
+      width: 0;
+      border-right-width: 0;
+      + nav {
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+    a.fa-ellipsis-v {
+      display: none;
+    }
+  }
+
+  .off-canvas.gn-icon-only {
+    .gn-menu-wrapper {
+      width: @navbar-height;
+    }
+    .gn-menu-wrapper.gn-open-all {
+      width: 300px;
+    }
+    + .content {
+      margin-left: @navbar-height + 15px;
+    }
+  }
+
+  .off-canvas.gn-full-width {
+    .gn-menu-wrapper {
+      .box-shadow(none);
+      width: 300px;
+    }
+    + .content {
+      margin-left: 300px + 15px;
+    }
+  }
+
+  .gn-menu-push {
+    .gn-icon-only {
+      + .content {
+        margin-left: 300px + 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-tablet) { 
+
+}
