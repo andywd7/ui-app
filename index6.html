@@ -68,11 +68,11 @@
 				<div class="gn-item collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="index.html">Layout 1</a></li>
-						<li class="active"><a href="index2.html">Layout 2</a></li>
+						<li><a href="index2.html">Layout 2</a></li>
 						<li><a href="index3.html">Layout 3</a></li>
 						<li><a href="index4.html">Layout 4</a></li>
 						<li><a href="index5.html">Layout 5</a></li>
-						<li><a href="index6.html">Layout 6</a></li>
+						<li class="active"><a href="index6.html">Layout 6</a></li>
 					</ul>
 					<!-- <ul class="nav navbar-nav navbar-right">
 						<li><a href="#">Link</a></li>
@@ -99,8 +99,9 @@
     <script src="scripts/5d38b450.main.js"></script>
 		<script src="scripts/gnmenu.yn.js"></script>
 		<script>
-			$(document).ready(function () { 
+			$(document).ready(function () {
 				$("#gn-menu").jqMenu({
+					menuType: 'icon-only',
 					//slideType: 'push'
 				});
 			});
