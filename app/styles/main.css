@@ -2681,7 +2681,8 @@ address {
   transition: all 0.2s ease-in-out;
 }
 .gn-menu-push .gn-menu-wrapper.gn-open-all,
-.gn-menu-push .off-canvas .gn-menu-wrapper.gn-open-all {
+.gn-menu-push .off-canvas .gn-menu-wrapper.gn-open-all,
+.gn-menu-push .gn-icon-only .gn-menu-wrapper.gn-open-all {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -2907,6 +2908,10 @@ address {
   border-width: 0;
   width: 0;
 }
+.off-canvas .gn-menu-wrapper.gn-open-all {
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 .off-canvas .navbar-collapse {
   margin-left: -50px;
 }
@@ -2920,8 +2925,6 @@ address {
 .touch .gn-icon-only .gn-menu-wrapper.gn-open-all {
   border-right-width: 1px;
   width: 350px;
-  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 .off-canvas .gn-scroller,
 .touch .gn-icon-only .gn-scroller {
