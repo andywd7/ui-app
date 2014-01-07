@@ -1,8 +1,10 @@
-.gn-icon-only,
-.gn-full-width {
+.gn-icon-only {
   .gn-menu-wrapper {
     width: @navbar-height;
-    //border-right-width: 1px;
+  }
+  .gn-menu-wrapper.gn-open-all {
+    width: 300px;
+    .box-shadow(1px 1px 2px rgba(0,0,0,.1));
   }
 }
 
@@ -12,6 +14,22 @@
     border-width: 0;
     width: 0;
   }
+  .navbar-collapse {
+    margin-left: -@navbar-height;
+  }
+  + .content {
+    margin-left: 15px;
+  }
+
+  .gn-menu-push & {
+    + .content {
+      margin-left: 300px + @navbar-height + 15px;
+    }
+  }
+}
+
+.off-canvas,
+.touch .gn-icon-only {
   .gn-menu-wrapper.gn-open-all {
     border-right-width: 1px;
     width: 300px + @navbar-height;
@@ -33,44 +51,27 @@
       width: 100%;
     }
   }
-  .navbar-collapse {
-    margin-left: -@navbar-height;
-  }
-  + .content {
-    margin-left: 15px;
-  }
-
-  .gn-menu-push & {
-    + .content {
-      margin-left: 300px + @navbar-height + 15px;
-    }
-    /*&.gn-icon-only + .content {
-      margin-left: 300px + 15px;
-    }*/
-  }
 }
 
-.gn-icon-only,
-.gn-full-width {
+// Put here for secificity reasons
+.gn-icon-only {
   .gn-menu-wrapper {
     border-right-width: 1px;
   }
 }
 
 
-.no-touch {
-  .off-canvas a.fa-ellipsis-v {
+.off-canvas.gn-menu-main,
+.touch .gn-icon-only {
+  a.fa-ellipsis-v {
     display: block;
   }
 }
 
-.touch {
-
-}
-
 
 @media (min-width: @grid-float-breakpoint) {
-  .off-canvas.gn-icon-only,
+
+  .no-touch .off-canvas.gn-icon-only,
   .off-canvas.gn-full-width {
     .gn-scroller {
       width: 300px + 30px;
@@ -88,33 +89,41 @@
     }
   }
 
-  .off-canvas.gn-icon-only {
+  .no-touch .off-canvas.gn-icon-only {
+    .gn-menu-wrapper.gn-open-all {
+      width: 300px;
+    }
+  }
+ 
+  .off-canvas.gn-full-width {
+    .gn-menu-wrapper {
+      border-right-width: 1px;
+      .box-shadow(none);
+      width: 300px;
+    }
+  }
+
+  .off-canvas.gn-icon-only,
+  .touch .gn-icon-only {
     .gn-menu-wrapper {
       width: @navbar-height;
     }
     .gn-menu-wrapper.gn-open-all {
-      width: 300px;
+      width: 300px + @navbar-height;
     }
+  }
+
+  //.off-canvas.gn-icon-only,
+  .gn-icon-only {
     + .content {
       margin-left: @navbar-height + 15px;
     }
   }
 
+  .gn-menu-push .gn-icon-only,
   .off-canvas.gn-full-width {
-    .gn-menu-wrapper {
-      .box-shadow(none);
-      width: 300px;
-    }
     + .content {
       margin-left: 300px + 15px;
-    }
-  }
-
-  .gn-menu-push {
-    .gn-icon-only {
-      + .content {
-        margin-left: 300px + 15px;
-      }
     }
   }
 }

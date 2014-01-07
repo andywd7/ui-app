@@ -70,6 +70,8 @@
                 $(this.el).addClass('off-canvas gn-full-width');
             } else if (this.settings.menuType === 'off-canvas-icon-only') {
                 $(this.el).addClass('off-canvas gn-icon-only');
+            } else if (this.settings.menuType === 'icon-only') {
+                $(this.el).addClass('gn-icon-only');
             };
 
             this.bodyClickFn = function() {
