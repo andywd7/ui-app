@@ -54,24 +54,25 @@
             this.trigger = this.el.querySelector('a.fa-ellipsis-v');
             this.menu = this.el.querySelector('.gn-menu-wrapper');
             this.menuOver = this.el.querySelector('ul.gn-menu');
-            this.start = this.el.querySelector('#gn-menu > div.gn-item');
+            this.content = '#content';
             this.isMenuOpen = false;
             this.eventtype = mobilecheck() ? 'touchstart' : 'click';
             this._initEvents();
 
             var self = this;
 
-            //if (this.settings.menuType === 'basic' || 'off-canvas-icon-only') {
-                $(this.start).addClass('gn-trigger');
-            //};
             if (this.settings.menuType === 'off-canvas') {
-                $(this.el).addClass('off-canvas');
+                $(this.el).addClass('gn-off');
+                $(this.content).addClass('gn-off-content');
             } else if (this.settings.menuType === 'off-canvas-full-width') {
-                $(this.el).addClass('off-canvas gn-full-width');
+                $(this.el).addClass('gn-off gn-fw');
+                $(this.content).addClass('gn-ocfw-content');
             } else if (this.settings.menuType === 'off-canvas-icon-only') {
-                $(this.el).addClass('off-canvas gn-icon-only');
+                $(this.el).addClass('gn-off gn-icons');
+                $(this.content).addClass('gn-ocio-content');
             } else if (this.settings.menuType === 'icon-only') {
-                $(this.el).addClass('gn-icon-only');
+                $(this.el).addClass('gn-icons');
+                $(this.content).addClass('gn-io-content');
             };
 
             this.bodyClickFn = function() {
