@@ -24,6 +24,7 @@
     var pluginName = "jqMenu",
     defaults = {
         menuType: 'basic',
+        menuSide: '',
         slideTpe: ''
     };
 
@@ -36,6 +37,7 @@
         // future instances of the plugin
         this.settings = $.extend({
             menuType: 'basic',
+            menuSide: '',
             slideType: ''
         }, defaults, options);
         //this._defaults = defaults;
@@ -61,28 +63,34 @@
 
             var self = this;
 
-            if (this.settings.menuType === 'off-canvas') {
-                $(this.el).addClass('gn-off');
-                $(this.content).addClass('gn-off-content');
-            } else if (this.settings.menuType === 'off-canvas-full-width') {
-                $(this.el).addClass('gn-off gn-fw');
-                $(this.content).addClass('gn-ocfw-content');
-            } else if (this.settings.menuType === 'off-canvas-icon-only') {
-                $(this.el).addClass('gn-off gn-icons');
-                $(this.content).addClass('gn-ocio-content');
-            } else if (this.settings.menuType === 'icon-only') {
-                $(this.el).addClass('gn-icons');
-                $(this.content).addClass('gn-io-content');
+            if (self.settings.menuType === 'off-canvas') {
+                $(self.el).addClass('gn-off');
+                //$(self.content).addClass('gn-off-content');
+            } else if (self.settings.menuType === 'off-canvas-full-width') {
+                $(self.el).addClass('gn-off gn-fw');
+                //$(self.content).addClass('gn-ocfw-content');
+            } else if (self.settings.menuType === 'off-canvas-icon-only') {
+                $(self.el).addClass('gn-off gn-icons');
+                //$(self.content).addClass('gn-ocio-content');
+            } else if (self.settings.menuType === 'icon-only') {
+                $(self.el).addClass('gn-icons');
+                //$(self.content).addClass('gn-io-content');
             };
 
             this.bodyClickFn = function() {
                 self._closeMenu();
-                $('body').removeClass('gn-menu-push');
+                $(self.el).removeClass('gn-menu-push');
+                $(self.content).css({'margin-left': '', 'margin-right': ''});
                 this.removeEventListener(self.eventtype, self.bodyClickFn);
             };
         },
         _initEvents : function() {
             var self = this;
+            $(window).load(function () {
+                self.scroller = self.el.querySelector('.gn-scroller');
+                self.margin = $(self.scroller).width() - 15 + 'px';
+                //console.log(self.margin);
+            });
 
             if (!mobilecheck()) {
                 this.menuOver.addEventListener('mouseover', function(ev) {
@@ -106,7 +114,12 @@
             if (this.settings.slideType === 'push') {
                 if (!mobilecheck()) {
                     this.menuOver.addEventListener('mouseover', function(ev) {
-                        $('body').addClass('gn-menu-push'); 
+                        $(self.el).addClass('gn-menu-push');
+                        if (self.settings.menuSide === 'right') {
+                            $(self.content).css({'margin-right': self.margin});
+                        } else {
+                            $(self.content).css({'margin-left': self.margin});
+                        };  
                         document.addEventListener(self.eventtype, self.bodyClickFn); 
                     } );
                 }   
@@ -114,10 +127,16 @@
                     ev.stopPropagation();
                     ev.preventDefault();
                     if (self.isMenuOpen) {
-                        $('body').addClass('gn-menu-push');
+                        $(self.el).addClass('gn-menu-push');
+                        if (self.settings.menuSide === 'right') {
+                            $(self.content).css({'margin-right': self.margin});
+                        } else {
+                            $(self.content).css({'margin-left': self.margin});
+                        };
                         document.addEventListener(self.eventtype, self.bodyClickFn);
                     } else {
-                        $('body').removeClass('gn-menu-push');
+                        $(self.el).removeClass('gn-menu-push');
+                        $(self.content).css({'margin-left': '', 'margin-right': ''});
                         document.removeEventListener(self.eventtype, self.bodyClickFn);
                     }
                 });

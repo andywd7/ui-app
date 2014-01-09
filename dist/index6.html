@@ -11,7 +11,7 @@
     <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <link rel="stylesheet" href="styles/291da091.main.css">
+    <link rel="stylesheet" href="styles/09096e69.main.css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
     <script src="scripts/41dc2b00.modernizr.js"></script>
 
@@ -137,12 +137,13 @@
 		<script>
 			$(document).ready(function () {
 				$("#gn-menu").jqMenu({
-					menuType: 'icon-only',
-					slideType: 'push'
+					menuType: 'off-canvas-icon-only',
+					//slideType: 'push'
 				});
 				$("#gn-menu-right").jqMenu({
-					menuType: 'off-canvas',
-					//slideType: 'push'
+					menuType: 'off-canvas-full-width',
+					menuSide: 'right',
+					slideType: 'push'
 				});
 			});
 			//Modernizr.load({

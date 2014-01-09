@@ -10,7 +10,7 @@
 
 .gn-off {
   .gn-menu-wrapper {
-    border-width: 0;
+    border-width: 1px 0 0;
     width: 0;
   }
   .navbar-collapse {
@@ -36,10 +36,10 @@
       .box-shadow(1px 1px 2px rgba(0,0,0,.1));
     }
 
-    + .gn-trigger-right + nav {
-      margin-right: -@navbar-height * 2;
-      padding-right: @navbar-height * 2;
-    }
+    /*+ .gn-trigger-right + nav {
+      padding-right: @navbar-height;
+      padding-left: @navbar-height;
+    }*/
   }
   &.gn-trigger-right {
     .gn-menu-wrapper.gn-open-all {
@@ -53,14 +53,27 @@
   &.gn-trigger,
   &.gn-trigger-right {
     border-bottom: 1px solid @navbar-default-border;
+  }
+  /*+ nav {
+    float: left;
+    margin-right: -@navbar-height;
+    padding-right: @navbar-height;
+    width: 100%;
+  }*/
+}
+
+//.gn-trigger {
+  .gn-off {
     + nav {
-      float: left;
-      margin-right: -@navbar-height;
       padding-right: @navbar-height;
-      width: 100%;
     }
   }
-}
+  .gn-off {
+    + nav {
+      padding-left: @navbar-height;
+    }
+  }
+//}
 
 
 .gn-off.gn-item,
@@ -70,11 +83,11 @@
   }
 }
 
-.gn-off-content,
+/*.gn-off-content,
 .gn-ocfw-content,
 .gn-ocio-content, {
   margin-left: 15px;
-}
+}*/
 
 
 @media (min-width: @grid-float-breakpoint) {
@@ -95,15 +108,31 @@
     &.gn-trigger-right {
       width: 0;
       border-right-width: 0;
-      + nav {
-        margin-right: 0;
-        padding-right: 0;
-      }
     }
+    /*+ nav {
+      padding-left: 0;
+      //padding-right: 0;
+    }*/
     a.fa-ellipsis-v {
       display: none;
     }
   }
+
+  //.gn-trigger {
+    .gn-off.gn-fw,
+    .gn-off.gn-icons {
+      + nav {
+        padding: 0;
+      }
+    }
+  //}
+
+  /*.gn-off.gn-icons {
+    + nav {
+      margin-right: -@navbar-height;
+      padding-right: @navbar-height;
+    }
+  }*/
 
   .no-touch .gn-off.gn-icons {
     .gn-menu-wrapper.gn-open-all {
@@ -134,14 +163,14 @@
   .gn-off.gn-fw,
   .gn-off.gn-icons,
   .touch .gn-icons {
-    &.gn-trigger-right {
+    //&.gn-trigger-right {
       .gn-menu-wrapper {
         border-left-width: 1px;
       }
-    }
+    //}
   }
 
-  .gn-io-content,
+  /*.gn-io-content,
   .gn-ocio-content {
     margin-left: @navbar-height + 15px;
   }
@@ -149,5 +178,5 @@
   .gn-menu-push .gn-io-content,
   .gn-ocfw-content {
     margin-left: 300px + 15px;
-  }
+  }*/
 }

@@ -143,12 +143,13 @@
 		<script>
 			$(document).ready(function () {
 				$("#gn-menu").jqMenu({
-					menuType: 'icon-only',
-					slideType: 'push'
+					menuType: 'off-canvas-icon-only',
+					//slideType: 'push'
 				});
 				$("#gn-menu-right").jqMenu({
-					menuType: 'off-canvas',
-					//slideType: 'push'
+					menuType: 'off-canvas-full-width',
+					menuSide: 'right',
+					slideType: 'push'
 				});
 			});
 			//Modernizr.load({
