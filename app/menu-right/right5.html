@@ -4,57 +4,47 @@
   <head lang="en-GB">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>UI App</title>
+    <title>Icon Only Right Menu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-    <link rel="stylesheet" href="styles/7f181497.main.css">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
-    <script src="scripts/41dc2b00.modernizr.js"></script>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+    <!-- build:js scripts/modernizr.js -->
+    <script src="../scripts/modernizr.custom.js"></script>
+    <!-- endbuild -->
 
-	<body class="" style="padding-top: 60px">
+	<body style="padding-top: 60px">
 		<!--[if lt IE 8]>
-	      <p class="browsehapy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	    <![endif]-->
+	    <p class="browsehapy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	  <![endif]-->
 
 	  <div class="gn-menu-main navbar navbar-default navbar-fixed-top">
-			<div id="gn-menu" class="gn-item gn-trigger">
+			<div id="gn-menu" class="gn-item gn-right gn-trigger">
 				<a class="fa-icon fa-ellipsis-v"><span>Menu</span></a>
 				<div class="gn-menu-wrapper">
 					<div class="gn-scroller">
 						<ul class="nav gn-menu">
-							<!-- <li class="gn-search-item">
-								<input placeholder="Search" type="search" class="gn-search">
-								<a class="fa-icon fa-search"><span>Search</span></a>
-							</li> -->
 							<li>
-								<a href="#" class="fa-icon fa-download">Downloads</a>
-								<!-- <ul class="nav gn-submenu">
-									<li><a class="fa-icon fa-file">Vector Illustrations</a></li>
-									<li><a class="fa-icon fa-file">Photoshop files</a></li>
-								</ul> -->
+								<a href="../index2.html" class="fa-icon fa-download">CSS Only</a>
 							</li>
-							<li><a href="#" class="fa-icon fa-cog">Settings</a></li>
-							<li><a href="#" class="fa-icon fa-info">Help</a></li>
+							<li><a href="right1.html" class="fa-icon fa-cog">Default</a></li>
+							<li><a href="right2.html" class="fa-icon fa-info">Off Canvas</a></li>
 							<li>
-								<a href="#" class="fa-icon fa-archive">Archives</a>
-								<!-- <ul class="nav gn-submenu">
-									<li><a class="fa-icon fa-article">Articles</a></li>
-									<li><a class="fa-icon fa-pictures">Images</a></li>
-									<li><a class="fa-icon fa-videos">Videos</a></li>
-								</ul> -->
+								<a href="right3.html" class="fa-icon fa-archive">Off Canvas &rarr; Icons</a>
 							</li>
-							<li><a href="#" class="fa-icon fa-cog">Settings</a></li>
-							<li><a href="#" class="fa-icon fa-info">Help</a></li>
+							<li><a href="right4.html" class="fa-icon fa-cog">Off Canvas &rarr; Full Width</a></li>
+							<li><a href="right5.html" class="fa-icon fa-info">Icons</a></li>
 							<li><a href="#" class="fa-icon fa-cog">Settings</a></li>
 							<li><a href="#" class="fa-icon fa-info">Help</a></li>
 						</ul>
 					</div><!-- /gn-scroller -->
 				</div>
 			</div>
+
 			<nav>
 				<div class="gn-item navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -67,23 +57,17 @@
 				</div>
 				<div class="gn-item collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Layout 1</a></li>
-						<li><a href="index2.html">Layout 2</a></li>
-						<li><a href="index3.html">Layout 3</a></li>
-						<li class="active"><a href="index4.html">Layout 4</a></li>
-						<li><a href="index5.html">Layout 5</a></li>
-						<li><a href="index6.html">Layout 6</a></li>
+						<li><a href="../index.html">Left Menu</a></li>
+						<li class="active"><a href="../index2.html">Right Menu</a></li>
+						<li><a href="../index3.html">Two Menus</a></li>
 					</ul>
-					<!-- <ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
-					</ul> -->
 				</div>
 			</nav>
 		</div>
 
 		<div id="content" class="content">
-			<h1>Basic Layout</h1>
-			<p>With Plugin & Menu icon</p>
+			<h1>Icon Only Right Menu</h1>
+			<p>Plugin, MenuType: 'icon-only'.</p>
 		</div>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -96,12 +80,16 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <script src="scripts/5d38b450.main.js"></script>
-		<script src="scripts/gnmenu.yn.js"></script>
+    <!-- build:js scripts/main.js -->
+		<script src="../bower_components/jquery/jquery.min.js"></script>
+		<script src="../bower_components/bootstrap/js/transition.js"></script>
+		<script src="../bower_components/bootstrap/js/collapse.js"></script>
+		<!-- endbuild -->
+		<script src="../scripts/gnmenu.yn.js"></script>
 		<script>
-			$(document).ready(function () {
+			$(document).ready(function () { 
 				$("#gn-menu").jqMenu({
-					menuType: 'off-canvas-icon-only',
+					menuType: 'icon-only',
 					//slideType: 'push'
 				});
 			});
@@ -113,4 +101,4 @@
 		</script>
 
 	</body>
-</head></html>
+</html>
