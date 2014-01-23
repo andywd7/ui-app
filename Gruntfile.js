@@ -224,7 +224,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: '*.html',
+          src: '{,*/}*.html',
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -264,8 +264,8 @@ module.exports = function (grunt) {
       dist: [
         //'coffee',
         'less',
-        'imagemin',
-        'svgmin',
+        //'imagemin',
+        //'svgmin',
         'htmlmin'
       ]
     }

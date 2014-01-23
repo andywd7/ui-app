@@ -321,7 +321,7 @@
 }
 
 .content {
-  margin: 0 0 21px 65px;
+  margin: 0 0 21px (@navbar-height + @content-margin-left);
   .transition(margin-left .2s ease-in-out);
 }
 
@@ -384,7 +384,7 @@
   }
 
   .content {
-    margin-left: @content-margin-left;
+    margin-left: 300px + @content-margin-left;
   }
   .navbar-collapse.collapse {
       height: @navbar-height !important;

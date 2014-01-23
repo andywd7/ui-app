@@ -4,7 +4,7 @@
   <head lang="en-GB">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CSS Only Right Menu</title>
+    <title>Off Canvas Menu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -13,7 +13,7 @@
 		<![endif]-->
     <link rel="stylesheet" href="../styles/c769c025.main.css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" type="text/css">
-    <script src="scripts/41dc2b00.modernizr.js"></script>
+    <script src="scripts/modernizr.js"></script>
 
 	<body style="padding-top: 60px">
 		<!--[if lt IE 8]>
@@ -21,39 +21,28 @@
 	  <![endif]-->
 
 	  <div class="gn-menu-main navbar navbar-default navbar-fixed-top">
-			<div class="gn-item gn-right">
+			<div id="gn-menu" class="gn-item gn-left gn-trigger">
+				<a class="fa-icon fa-ellipsis-v"><span>Menu</span></a>
 				<div class="gn-menu-wrapper">
 					<div class="gn-scroller">
 						<ul class="nav gn-menu">
-							<!-- <li class="gn-search-item">
-								<input placeholder="Search" type="search" class="gn-search">
-								<a class="fa-icon fa-search"><span>Search</span></a>
-							</li> -->
 							<li>
-								<a href="index2.html" class="fa-icon fa-download">CSS Only</a>
-								<!-- <ul class="nav gn-submenu">
-									<li><a class="fa-icon fa-file">Vector Illustrations</a></li>
-									<li><a class="fa-icon fa-file">Photoshop files</a></li>
-								</ul> -->
+								<a href="../index.html" class="fa-icon fa-download">CSS Only</a>
 							</li>
-							<li><a href="menu-right/right1.html" class="fa-icon fa-cog">Default</a></li>
-							<li><a href="menu-right/right2.html" class="fa-icon fa-info">Off Canvas</a></li>
+							<li><a href="left1.html" class="fa-icon fa-cog">Default</a></li>
+							<li><a href="left2.html" class="fa-icon fa-info">Off Canvas</a></li>
 							<li>
-								<a href="menu-right/right3.html" class="fa-icon fa-archive">Off Canvas &rarr; Icons</a>
-								<!-- <ul class="nav gn-submenu">
-									<li><a class="fa-icon fa-article">Articles</a></li>
-									<li><a class="fa-icon fa-pictures">Images</a></li>
-									<li><a class="fa-icon fa-videos">Videos</a></li>
-								</ul> -->
+								<a href="left3.html" class="fa-icon fa-archive">Off Canvas &rarr; Icons</a>
 							</li>
-							<li><a href="menu-right/right4.html" class="fa-icon fa-cog">Off Canvas &rarr; Full Width</a></li>
-							<li><a href="menu-right/right5.html" class="fa-icon fa-info">Icons</a></li>
+							<li><a href="left4.html" class="fa-icon fa-cog">Off Canvas &rarr; Full Width</a></li>
+							<li><a href="left5.html" class="fa-icon fa-info">Icons</a></li>
 							<li><a href="#" class="fa-icon fa-cog">Settings</a></li>
 							<li><a href="#" class="fa-icon fa-info">Help</a></li>
 						</ul>
 					</div><!-- /gn-scroller -->
 				</div>
 			</div>
+
 			<nav>
 				<div class="gn-item navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -66,20 +55,17 @@
 				</div>
 				<div class="gn-item collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav">
-						<li><a href="index.html">Left Menu</a></li>
-						<li class="active"><a href="index2.html">Right Menu</a></li>
-						<li><a href="index3.html">Two Menus</a></li>
+						<li class="active"><a href="../index.html">Left Menu</a></li>
+						<li><a href="../index2.html">Right Menu</a></li>
+						<li><a href="../index3.html">Two Menus</a></li>
 					</ul>
-					<!-- <ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
-					</ul> -->
 				</div>
 			</nav>
 		</div>
 
-		<div class="content">
-			<h1>CSS Only Right Menu</h1>
-			<p>No Plugin Right Side Option</p>
+		<div id="content" class="content">
+			<h1>Off Canvas Menu</h1>
+			<p>Plugin, MenuType: 'off-canvas'.</p>
 		</div>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -92,7 +78,21 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <script src="scripts/5d38b450.main.js"></script>
+    <script src="scripts/main.js"></script>
+		<script src="../scripts/gnmenu.yn.js"></script>
+		<script>
+			$(document).ready(function () { 
+				$("#gn-menu").jqMenu({
+					menuType: 'off-canvas',
+					//slideType: 'push'
+				});
+			});
+			//Modernizr.load({
+				//test : Modernizr.mq('screen and (max-width: 767px)'),
+				//yep : 'scripts/gnmenu.yn.js',
+				//callback : function (url, result, key) { $(function() { $("#gn-menu").jqMenu(); }); }
+			//});
+		</script>
 
 	</body>
 </head></html>
