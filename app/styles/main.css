@@ -2653,7 +2653,6 @@ address {
   z-index: 1;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -2834,7 +2833,7 @@ address {
 .gn-trigger:not(.gn-off) .fa-ellipsis-v {
   display: none;
 }
-.touch .gn-trigger .fa-ellipsis-v {
+.touch .gn-trigger:not(.gn-off) .fa-ellipsis-v {
   display: block;
 }
 .no-touch {
@@ -2961,20 +2960,20 @@ address {
 .gn-off .gn-menu-wrapper {
   width: 0;
 }
-.gn-off.gn-left .gn-menu-wrapper {
-  border-right-width: 0;
-}
-.gn-off.gn-right .gn-menu-wrapper {
-  border-left-width: 0;
-}
 .gn-off .gn-menu-wrapper.gn-open-all {
   width: 350px;
 }
 .gn-off .gn-scroller {
   width: 380px;
 }
+.gn-off.gn-left .gn-menu-wrapper {
+  border-right-width: 0;
+}
 .gn-off.gn-left .gn-menu-wrapper.gn-open-all {
   border-right-width: 1px;
+}
+.gn-off.gn-right .gn-menu-wrapper {
+  border-left-width: 0;
 }
 .gn-off.gn-right .gn-menu-wrapper.gn-open-all {
   border-left-width: 1px;
